@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
     :root{
         font-size: 100%;
         --width: 600px;
+        --font-gray-1: #828282;
     }
 
     html, body, #__next {

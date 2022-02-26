@@ -11,6 +11,15 @@
     "Malgun Gothic", sans-serif;
 }
 
+body {
+  width: 100%;
+}
+
+body > div {
+  width: 600px;
+  margin: 0 auto;
+}
+
 html,
 body,
 div,
