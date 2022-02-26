@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import ImportantCard from "../components/ImportantCard";
-import CandidateCard from "../components/CandidateCard";
+import ImportantCard from "../components/importantCard";
+import CandidateCard from "../components/candidateCard";
+import KeywordList from "../components/keywordList";
 
 export default function Home() {
   return (
@@ -22,6 +23,11 @@ export default function Home() {
           background={"#F07070"}
         />
       </CardWrapper>
+      <Header>
+        <h1>키워드로 보는 정책</h1>
+        <h3>2명의 후보가 만들어갈 미래입니다.</h3>
+      </Header>
+      <KeywordList />
     </>
   );
 }
