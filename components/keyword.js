@@ -4,8 +4,10 @@ import styled from "styled-components";
 const Keyword = () => {
   return (
     <Container>
-      <h3>경제</h3>
-      <hr />
+      <div>
+        <h3>경제</h3>
+        <hr />
+      </div>
       <DetailWrapper>
         <div>
           <ul>
@@ -27,7 +29,7 @@ const Keyword = () => {
 const DetailWrapper = styled.div`
   display: flex;
   padding-left: 22px;
-
+  z-index: -1;
   & div > ul {
     padding: 0 22px;
   }
@@ -45,14 +47,21 @@ const DetailWrapper = styled.div`
 
 const Container = styled.div`
   & hr {
-    margin-top: 16px;
+    margin: 0;
     margin-bottom: 26px;
     border: 1px solid #eaeaea;
   }
 
-  & > h3 {
+  & > div {
+    position: sticky;
+    top: 50px;
+    background-color: white;
+  }
+
+  & h3 {
+    padding: 16px 0;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.25rem;
   }
 `;

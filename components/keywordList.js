@@ -35,7 +35,7 @@ const NavContainer = styled.div`
   display: flex;
   position: sticky;
   top: 0;
-
+  z-index: 1;
   & div {
     width: 100%;
     background-color: #f07070;
