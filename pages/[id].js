@@ -8,7 +8,7 @@ const DetailPage = () => {
   const router = useRouter();
   const { id } = router.query;
   return (
-    <div>
+    <>
       <h3>위기에 강한, 유능한 경제 대통령</h3>
       <h1>이재명</h1>
       <p>{id}</p>
@@ -44,25 +44,22 @@ const DetailPage = () => {
         />
         <Table label={"재산"} list={["28억 6437만원"]} />
       </TableWrapper>
-    </div>
+      <Divider />
+    </>
   );
 };
 
 const TableWrapper = styled.div`
-  & span {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 100px;
+  & span:last-of-type {
+    margin-bottom: 0;
   }
+`;
 
-  & span > p {
-    font-weight: 500;
-  }
-
-  & span div p {
-    color: #9f9f9f;
-    margin-bottom: 14px;
-  }
+const Divider = styled.div`
+  width: 100%;
+  height: 16px;
+  background-color: #f2f3f5;
+  margin: 40px 0;
 `;
 
 export default DetailPage;

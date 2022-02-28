@@ -27,6 +27,10 @@ const Container = styled.span`
     color: #9f9f9f;
     margin-bottom: 14px;
   }
+
+  & div p:last-of-type {
+    margin-bottom: 0;
+  }
 `;
 
 export default Table;
