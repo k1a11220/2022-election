@@ -15,7 +15,7 @@ const Table = ({ label, list }) => {
 };
 
 const Container = styled.span`
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: flex;
   gap: 100px;
 

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
+import BackBtn from "../components/backBtn";
 import { Title } from "../styles/styles";
 import Table from "./detail/table";
 
@@ -9,14 +10,16 @@ const DetailPage = () => {
   const { id } = router.query;
   return (
     <>
-      <h3>위기에 강한, 유능한 경제 대통령</h3>
-      <h1>이재명</h1>
-      <p>{id}</p>
+      <Header>
+        <BackBtn isOnly={false} />
+        <h3>위기에 강한, 유능한 경제 대통령</h3>
+        <h1>이재명</h1>
+      </Header>
 
       <Title>
         <h1>후보 정보</h1>
-        <h3>후보를 알아볼 수 있습니다.</h3>
       </Title>
+
       <TableWrapper>
         <Table
           label={"출생"}
@@ -44,10 +47,27 @@ const DetailPage = () => {
         />
         <Table label={"재산"} list={["28억 6437만원"]} />
       </TableWrapper>
+
       <Divider />
     </>
   );
 };
+
+const Header = styled.header`
+  & h3 {
+    color: #9f9f9f;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 14px;
+    padding-top: 40px;
+  }
+
+  & h1 {
+    color: #70aff0;
+    font-size: 54px;
+    font-weight: 700;
+  }
+`;
 
 const TableWrapper = styled.div`
   & span:last-of-type {
