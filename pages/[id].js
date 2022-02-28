@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
+import Accordion from "../components/accordion/accordion";
 import BackBtn from "../components/backBtn";
 import { Title } from "../styles/styles";
 import Table from "./detail/table";
@@ -138,6 +139,21 @@ const DetailPage = () => {
         <Title>
           <h1>주요 10대 공약</h1>
         </Title>
+        <Accordion title="Why is the sky blue?">
+          Sunlight reaches Earth's atmosphere and is scattered in all directions
+          by all the gases and particles in the air. Blue light is scattered
+          more than the other colors because it travels as shorter, smaller
+          waves. This is why we see a blue sky most of the time.
+        </Accordion>
+        <Accordion title="What's It Like Inside Jupiter?">
+          It's really hot inside Jupiter! No one knows exactly how hot, but
+          scientists think it could be about 43,000°F (24,000°C) near Jupiter's
+          center, or core.
+        </Accordion>
+        <Accordion title="What Is a Black Hole?">
+          A black hole is an area of such immense gravity that nothing -- not
+          even light -- can escape from it.
+        </Accordion>
       </TableWrapper>
     </>
   );
