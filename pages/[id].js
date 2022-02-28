@@ -1,13 +1,69 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import BackBtn from "../components/backBtn";
 import { Title } from "../styles/styles";
 import Table from "./detail/table";
 
+const getDimensions = (ele) => {
+  const { height } = ele.getBoundingClientRect();
+  const offsetTop = ele.offsetTop;
+  const offsetBottom = offsetTop + height;
+
+  return {
+    height,
+    offsetTop,
+    offsetBottom,
+  };
+};
+
+const scrollTo = (ele) => {
+  ele.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
+
 const DetailPage = () => {
   const router = useRouter();
   const { id } = router.query;
+  const [visibleSection, setVisibleSection] = useState();
+
+  const headerRef = useRef(null);
+  const infoRef = useRef(null);
+  const mainRef = useRef(null);
+
+  const sectionRefs = [
+    { section: "Info", ref: infoRef },
+    { section: "Main", ref: mainRef },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const { height: headerHeight } = getDimensions(headerRef.current);
+      const scrollPosition = window.scrollY + headerHeight;
+
+      const selected = sectionRefs.find(({ section, ref }) => {
+        const ele = ref.current;
+        if (ele) {
+          const { offsetBottom, offsetTop } = getDimensions(ele);
+          return scrollPosition > offsetTop && scrollPosition < offsetBottom;
+        }
+      });
+
+      if (selected && selected.section !== visibleSection) {
+        setVisibleSection(selected.section);
+      } else if (!selected && visibleSection) {
+        setVisibleSection(undefined);
+      }
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [visibleSection]);
   return (
     <>
       <Header>
@@ -16,11 +72,39 @@ const DetailPage = () => {
         <h1>이재명</h1>
       </Header>
 
-      <Title>
-        <h1>후보 정보</h1>
-      </Title>
+      <NavContainer>
+        <div className="sticky">
+          <div className="header" ref={headerRef}>
+            <button
+              type="button"
+              className={`header_link ${
+                visibleSection === "Info" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(infoRef.current);
+              }}
+            >
+              후보 정보
+            </button>
+            <button
+              type="button"
+              className={`header_link ${
+                visibleSection === "Main" ? "selected" : ""
+              }`}
+              onClick={() => {
+                scrollTo(mainRef.current);
+              }}
+            >
+              주요 10대 공약
+            </button>
+          </div>
+        </div>
+      </NavContainer>
 
-      <TableWrapper>
+      <TableWrapper className="section" id="Info" ref={infoRef}>
+        <Title>
+          <h1>후보 정보</h1>
+        </Title>
         <Table
           label={"출생"}
           list={["1964. 12. 22(59세, 만 57세) 경상북도 안동"]}
@@ -49,9 +133,20 @@ const DetailPage = () => {
       </TableWrapper>
 
       <Divider />
+
+      <TableWrapper className="section" id="Main" ref={mainRef}>
+        <Title>
+          <h1>주요 10대 공약</h1>
+        </Title>
+      </TableWrapper>
     </>
   );
 };
+
+const NavContainer = styled.nav`
+  position: sticky;
+  top: 0;
+`;
 
 const Header = styled.header`
   & h3 {
@@ -69,7 +164,7 @@ const Header = styled.header`
   }
 `;
 
-const TableWrapper = styled.div`
+const TableWrapper = styled.section`
   & span:last-of-type {
     margin-bottom: 0;
   }
