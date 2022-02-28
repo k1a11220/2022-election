@@ -2,6 +2,7 @@ import styled from "styled-components";
 import ImportantCard from "../components/importantCard";
 import CandidateCard from "../components/candidateCard";
 import KeywordList from "../components/keywordList";
+import { Title } from "../styles/styles";
 
 export default function Home() {
   return (
@@ -46,25 +47,6 @@ const Header = styled.header`
     background: linear-gradient(45deg, #a2f0c0, #67c3eb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-
-  h3 {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: var(--font-gray-1);
-  }
-`;
-
-const Title = styled.h2`
-  display: flex;
-  flex-direction: column;
-  padding-top: 120px;
-  padding-bottom: 40px;
-
-  h1 {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
-    font-weight: bold;
   }
 
   h3 {
