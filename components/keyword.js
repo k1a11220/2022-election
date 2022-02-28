@@ -30,6 +30,7 @@ const DetailWrapper = styled.div`
   display: flex;
   padding-left: 22px;
   z-index: -1;
+
   & div > ul {
     padding: 0 22px;
   }
@@ -59,7 +60,7 @@ const Container = styled.div`
   }
 
   & h3 {
-    padding: 16px 0;
+    padding: 15px 0;
     text-align: center;
     font-weight: 500;
     font-size: 1.25rem;

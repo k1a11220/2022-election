@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Header>
         <h1>2022년 20대 대선</h1>
-        <h3>우리의 미래, 우리가 선택합니다.</h3>
+        <h3>우리의 선택, 우리의 미래</h3>
       </Header>
       <ImportantCard />
       <CardWrapper>
@@ -23,22 +23,47 @@ export default function Home() {
           background={"#F07070"}
         />
       </CardWrapper>
-      <Header>
+      <Title>
         <h1>키워드로 보는 정책</h1>
         <h3>2명의 후보가 만들어갈 미래입니다.</h3>
-      </Header>
+      </Title>
       <KeywordList />
     </>
   );
 }
 
 const Header = styled.header`
-  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+
+  h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #a2f0c0, #67c3eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--font-gray-1);
+  }
+`;
+
+const Title = styled.h2`
+  display: flex;
+  flex-direction: column;
+  padding-top: 120px;
   padding-bottom: 40px;
 
   h1 {
     font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-weight: bold;
   }
 
