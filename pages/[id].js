@@ -8,6 +8,9 @@ import LeeInfoList from "../components/detail/leeInfoList";
 import YoonAccordionList from "../components/detail/yoonAccordionList";
 import YoonInfoList from "../components/detail/yoonInfoList";
 import TabIndicator from "../components/tabIndicator";
+import Image from "next/image";
+import LeeImg from "../media/lee.png";
+import YoonImg from "../media/yoon.png";
 
 const DetailPage = () => {
   const router = useRouter();
@@ -24,20 +27,25 @@ const DetailPage = () => {
   return (
     <>
       <Header id={id}>
-        <BackBtn isOnly={false} />
-        {id === "1" ? (
-          <>
-            <h3>위기에 강한, 유능한 경제 대통령</h3>
-            <h1>이재명</h1>
-          </>
-        ) : id === "2" ? (
-          <>
-            <h3>국민이 키운 윤석열 내일을 바꾸는 대통령</h3>
-            <h1>윤석열</h1>
-          </>
-        ) : (
-          ""
-        )}
+        <HeaderContent id={id}>
+          <BackBtn isOnly={false} />
+          {id === "1" ? (
+            <>
+              <h3>위기에 강한, 유능한 경제 대통령</h3>
+              <h1>이재명</h1>
+            </>
+          ) : id === "2" ? (
+            <>
+              <h3>국민이 키운 윤석열 내일을 바꾸는 대통령</h3>
+              <h1>윤석열</h1>
+            </>
+          ) : (
+            ""
+          )}
+        </HeaderContent>
+        <ProfileContainer id={id}>
+          <Image src={id === "1" ? LeeImg : YoonImg} responsive />
+        </ProfileContainer>
       </Header>
 
       <TabIndicator
@@ -72,6 +80,18 @@ const DetailPage = () => {
 };
 
 const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  width: 680px;
+  height: 300px;
+  flex-direction: row;
+  align-self: center;
+  background-color: ${(props) =>
+    props.id === "1" ? "#F7F8FA" : props.id === "2" ? "#FAF7F8" : ""};
+`;
+
+const HeaderContent = styled.div`
+  padding: 0 40px;
   & h3 {
     color: #9f9f9f;
     font-size: 20px;
@@ -86,6 +106,11 @@ const Header = styled.header`
     font-size: 54px;
     font-weight: 700;
   }
+`;
+
+const ProfileContainer = styled.div`
+  width: ${(props) => (props.id === "1" ? "230px" : "270px")};
+  align-self: flex-end;
 `;
 
 const TableWrapper = styled.section`
