@@ -92,7 +92,6 @@ const NavContainer = styled.div`
   border-bottom: 1px solid #f2f3f5;
   position: sticky;
   top: 0;
-  margin-top: 78px;
   z-index: 2;
 `;
 
