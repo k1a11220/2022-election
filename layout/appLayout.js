@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import Footer from "../components/footer";
 import GlobalStyle from "../styles/globalStyle";
 
 const AppLayout = ({ children }) => {
@@ -7,6 +7,7 @@ const AppLayout = ({ children }) => {
     <>
       <GlobalStyle />
       {children}
+      <Footer />
     </>
   );
 };

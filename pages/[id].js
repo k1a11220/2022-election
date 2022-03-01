@@ -123,7 +123,7 @@ const TableWrapper = styled.section`
 const Divider = styled.div`
   width: 100%;
   margin-top: 40px;
-  border-bottom: 12px solid #f2f3f5;
+  border-bottom: 4px solid #f2f3f5;
 `;
 
 export default DetailPage;
