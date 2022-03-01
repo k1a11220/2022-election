@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Accordion from "../components/accordion/accordion";
 import BackBtn from "../components/backBtn";
 import { Title } from "../styles/styles";
-import Table from "../components/detail/table";
 import LeeAccordionList from "../components/detail/leeAccordionList";
 import LeeInfoList from "../components/detail/leeInfoList";
+import YoonAccordionList from "../components/detail/yoonAccordionList";
+import YoonInfoList from "../components/detail/yoonInfoList";
 
 const getDimensions = (ele) => {
   const { height } = ele.getBoundingClientRect();
@@ -110,7 +110,7 @@ const DetailPage = () => {
         <Title>
           <h1>후보 정보</h1>
         </Title>
-        {id === "1" ? <LeeInfoList /> : ""}
+        {id === "1" ? <LeeInfoList /> : id === "2" ? <YoonInfoList /> : ""}
         <Divider />
       </TableWrapper>
 
@@ -118,7 +118,13 @@ const DetailPage = () => {
         <Title>
           <h1>주요 10대 공약</h1>
         </Title>
-        {id === "1" ? <LeeAccordionList /> : ""}
+        {id === "1" ? (
+          <LeeAccordionList />
+        ) : id === "2" ? (
+          <YoonAccordionList />
+        ) : (
+          ""
+        )}
       </TableWrapper>
     </>
   );
