@@ -69,10 +69,21 @@ const DetailPage = () => {
   }, [visibleSection]);
   return (
     <>
-      <Header>
+      <Header id={id}>
         <BackBtn isOnly={false} />
-        <h3>위기에 강한, 유능한 경제 대통령</h3>
-        <h1>이재명</h1>
+        {id === "1" ? (
+          <>
+            <h3>위기에 강한, 유능한 경제 대통령</h3>
+            <h1>이재명</h1>
+          </>
+        ) : id === "2" ? (
+          <>
+            <h3>국민이 키운 윤석열 내일을 바꾸는 대통령</h3>
+            <h1>윤석열</h1>
+          </>
+        ) : (
+          ""
+        )}
       </Header>
 
       <NavContainer className="sticky">
@@ -172,14 +183,15 @@ const Header = styled.header`
   }
 
   & h1 {
-    color: #70aff0;
+    color: ${(props) =>
+      props.id === "1" ? "#70aff0" : props.id === "2" ? "#F07070" : ""};
     font-size: 54px;
     font-weight: 700;
   }
 `;
 
 const TableWrapper = styled.section`
-  padding-top: 60px;
+  padding-top: 40px;
   & span:last-of-type {
     margin-bottom: 0;
   }

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Title = styled.h2`
   display: flex;
   flex-direction: column;
-  padding-top: ${(props) => (props.top ? "120px" : "60px")};
+  padding-top: ${(props) => (props.top ? "120px" : "10px")};
   padding-bottom: 32px;
 
   h1 {
