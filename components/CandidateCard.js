@@ -46,6 +46,12 @@ const Container = styled.div`
       font-weight: 600;
     }
   }
+
+  &:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+    transition: all 0.2s ease-in-out;
+  }
 `;
 
 const ProfileContainer = styled.div`

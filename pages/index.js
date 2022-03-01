@@ -26,7 +26,7 @@ export default function Home() {
           link={"2"}
         />
       </CardWrapper>
-      <Title>
+      <Title top={true}>
         <h1>키워드로 보는 정책</h1>
         <h3>2명의 후보가 만들어갈 미래입니다.</h3>
       </Title>
