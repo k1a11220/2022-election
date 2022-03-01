@@ -9,7 +9,7 @@ const Accordion = ({ title, children }) => {
         className={`accordion-title ${isOpen ? "open" : ""}`}
         onClick={() => setOpen(!isOpen)}
       >
-        {title}
+        <p>{title}</p>
       </AccordionTitle>
       <AccordionItem className={`accordion-item ${!isOpen ? "collapsed" : ""}`}>
         <AccordionContent className="accordion-content">
@@ -21,8 +21,9 @@ const Accordion = ({ title, children }) => {
 };
 
 const AccordionWrapper = styled.div`
+  width: 100%;
   & + * {
-    margin-top: 0.5em;
+    margin-top: 1rem;
   }
 `;
 
@@ -31,6 +32,9 @@ const AccordionItem = styled.div`
   transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
   height: auto;
   max-height: 9999px;
+  background-color: #f7f8fa;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 
   &.collapsed {
     max-height: 0;
@@ -39,15 +43,21 @@ const AccordionItem = styled.div`
 `;
 
 const AccordionTitle = styled.div`
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  color: #666;
-  padding: 0.5em 1.5em;
-  border: solid 1px #ccc;
-  border-radius: 1.5em;
+  color: #2e2e2e;
+  padding: 1rem 1.5rem;
+  background-color: #f7f8fa;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1rem;
+
+  & p {
+    line-height: 1.5;
+    width: 92%;
+  }
 
   &::after {
     content: "";
@@ -58,9 +68,10 @@ const AccordionTitle = styled.div`
     border-top: 5px solid currentColor;
   }
 
-  &:hover,
   &.open {
     color: black;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   &.open {
@@ -73,34 +84,10 @@ const AccordionTitle = styled.div`
 `;
 
 const AccordionContent = styled.div`
-  padding: 1em 1.5em;
+  padding: 1rem 1.5em;
+  line-height: 1.5;
+  color: #9f9f9f;
+  font-weight: 400;
 `;
-
-/*
-.wrapper {
-
-}
-
-.accordion-wrapper {
-
-}
-
-.accordion-item {
-
-}
-
-.accordion-item.collapsed {
-
-}
-
-.accordion-title {
-
-}
-
-.accordion-content {
-
-}
-
-*/
 
 export default Accordion;

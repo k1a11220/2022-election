@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Title = styled.h2`
   display: flex;
   flex-direction: column;
-  padding-top: 120px;
-  padding-bottom: 40px;
+  padding-top: ${(props) => (props.top ? "120px" : "60px")};
+  padding-bottom: 32px;
 
   h1 {
     font-size: 1.75rem;

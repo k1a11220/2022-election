@@ -18,6 +18,7 @@ const Container = styled.span`
   margin-bottom: 24px;
   display: flex;
   gap: 100px;
+  font-size: 1.125rem;
 
   & > p {
     font-weight: 500;
