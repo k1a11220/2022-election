@@ -83,7 +83,7 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   width: 680px;
-  height: 300px;
+  height: 320px;
   flex-direction: row;
   align-self: center;
   background-color: ${(props) =>

@@ -1,14 +1,17 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
-const CandidateCard = ({ party, candidate, background }) => {
+const CandidateCard = ({ party, candidate, background, link }) => {
   return (
-    <Container background={background}>
-      <div>
-        <h4>{party}</h4>
-        <h3>{candidate}</h3>
-      </div>
-    </Container>
+    <Link href={link}>
+      <Container background={background}>
+        <div>
+          <h4>{party}</h4>
+          <h3>{candidate}</h3>
+        </div>
+      </Container>
+    </Link>
   );
 };
 
@@ -19,6 +22,7 @@ const Container = styled.div`
   height: 210px;
   background-color: ${(props) => props.background};
   border-radius: 22px;
+  cursor: pointer;
 
   & > div {
     padding: 22px;

@@ -17,11 +17,13 @@ export default function Home() {
           party={"더불어민주당"}
           candidate={"이재명"}
           background={"#70AFF0"}
+          link={"1"}
         />
         <CandidateCard
           party={"국민의힘"}
           candidate={"윤석열"}
           background={"#F07070"}
+          link={"2"}
         />
       </CardWrapper>
       <Title>
