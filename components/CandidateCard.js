@@ -1,6 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
+import LeeImg from "../media/lee.png";
+import YoonImg from "../media/yoon.png";
 
 const CandidateCard = ({ party, candidate, background, link }) => {
   return (
@@ -10,6 +13,9 @@ const CandidateCard = ({ party, candidate, background, link }) => {
           <h4>{party}</h4>
           <h3>{candidate}</h3>
         </div>
+        <ProfileContainer link={link}>
+          <Image src={link === "1" ? LeeImg : YoonImg} responsive />
+        </ProfileContainer>
       </Container>
     </Link>
   );
@@ -22,9 +28,10 @@ const Container = styled.div`
   height: 210px;
   background-color: ${(props) => props.background};
   border-radius: 22px;
+  border-bottom-right-radius: 0;
   cursor: pointer;
 
-  & > div {
+  & > div:first-of-type {
     padding: 22px;
 
     & h4 {
@@ -39,6 +46,13 @@ const Container = styled.div`
       font-weight: 600;
     }
   }
+`;
+
+const ProfileContainer = styled.div`
+  width: ${(props) => (props.link === "1" ? "130px" : "150px")};
+  align-self: flex-end;
+  position: relative;
+  top: 92.5px;
 `;
 
 export default CandidateCard;
