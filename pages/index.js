@@ -1,7 +1,7 @@
 import styled from "styled-components";
 // import ImportantCard from "../components/importantCard";
 import KeywordList from "../components/keywordList";
-import CandidateCard from "../components/candidateCard";
+// import CandidateCard from "../components/candidateCard";
 import { Title } from "../styles/styles";
 
 export default function Home() {
