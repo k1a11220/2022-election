@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import ImportantCard from "../components/importantCard";
+import CandiCard from "../components/candiCard";
+// import ImportantCard from "../components/importantCard";
 import KeywordList from "../components/keywordList";
-import CandidateCard from "../components/candidateCard";
 import { Title } from "../styles/styles";
 
 export default function Home() {
@@ -12,15 +12,15 @@ export default function Home() {
         <h3>우리의 선택, 우리의 미래</h3>
       </Header>
       {/*에러 발생*/}
-      <ImportantCard />
+      {/* <ImportantCard /> */}
       <CardWrapper>
-        <CandidateCard
+        <CandiCard
           party={"더불어민주당"}
           candidate={"이재명"}
           background={"#70AFF0"}
           link={"1"}
         />
-        <CandidateCard
+        <CandiCard
           party={"국민의힘"}
           candidate={"윤석열"}
           background={"#F07070"}

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import LeeImg from "../media/lee.png";
 import YoonImg from "../media/yoon.png";
 
-const CandidateCard = ({ party, candidate, background, link }) => {
+const CandiCard = ({ party, candidate, background, link }) => {
   return (
     <Link href={link}>
       <CardContainer background={background}>
@@ -61,4 +61,4 @@ const ProfileContainer = styled.div`
   top: 92.5px;
 `;
 
-export default CandidateCard;
+export default CandiCard;
