@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import CandiCard from "../components/candiCard";
-// import ImportantCard from "../components/importantCard";
+import ImpCard from "../components/impCard";
 import KeywordList from "../components/keywordList";
 import { Title } from "../styles/styles";
 
@@ -11,8 +11,7 @@ export default function Home() {
         <h1>2022년 20대 대선</h1>
         <h3>우리의 선택, 우리의 미래</h3>
       </Header>
-      {/*에러 발생*/}
-      {/* <ImportantCard /> */}
+      <ImpCard />
       <CardWrapper>
         <CandiCard
           party={"더불어민주당"}

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ImportantCard = () => {
+const ImpCard = () => {
   return (
     <CardContainer>
       <p>
@@ -25,4 +25,4 @@ const CardContainer = styled.div`
   }
 `;
 
-export default ImportantCard;
+export default ImpCard;
