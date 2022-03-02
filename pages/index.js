@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ImportantCard from "../components/importantCard";
+// import ImportantCard from "../components/importantCard";
 import KeywordList from "../components/keywordList";
 import CandidateCard from "../components/candidateCard";
 import { Title } from "../styles/styles";
@@ -11,9 +11,9 @@ export default function Home() {
         <h1>2022년 20대 대선</h1>
         <h3>우리의 선택, 우리의 미래</h3>
       </Header>
-      <ImportantCard />
+      {/* <ImportantCard /> */}
       <CardWrapper>
-        <CandidateCard
+        {/* <CandidateCard
           party={"더불어민주당"}
           candidate={"이재명"}
           background={"#70AFF0"}
@@ -24,7 +24,7 @@ export default function Home() {
           candidate={"윤석열"}
           background={"#F07070"}
           link={"2"}
-        />
+        /> */}
       </CardWrapper>
       <Title top={true}>
         <h1>키워드로 보는 정책</h1>
