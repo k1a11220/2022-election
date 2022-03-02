@@ -44,7 +44,7 @@ const DetailPage = () => {
           )}
         </HeaderContent>
         <ProfileContainer id={id}>
-          <Image src={id === "1" ? LeeImg : YoonImg} responsive />
+          <Image src={id === "1" ? LeeImg : YoonImg} responsive="true" />
         </ProfileContainer>
       </Header>
 

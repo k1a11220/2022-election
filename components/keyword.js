@@ -1,24 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 
-const Keyword = () => {
+const Keyword = ({ label, listL, listY }) => {
   return (
     <Container>
       <div>
-        <h3>경제</h3>
+        <h3>{label}</h3>
         <hr />
       </div>
       <DetailWrapper>
         <div>
           <ul>
-            <li>기본소득, 기본주택, 기본금융 등 전국민 대상 ‘기본시리즈’</li>
+            {listL.map((post, index) => (
+              <li key={index}>{post}</li>
+            ))}
           </ul>
         </div>
         <div>
           <ul>
-            <li>
-              민간이 주도하고 정부가 돕는 경제생태계 복원과 양질의 일자리 창출
-            </li>
+            {listY.map((post, index) => (
+              <li key={index}>{post}</li>
+            ))}
           </ul>
         </div>
       </DetailWrapper>
@@ -30,6 +32,10 @@ const DetailWrapper = styled.div`
   display: flex;
   padding-left: 22px;
   z-index: -1;
+
+  & > div {
+    max-width: 50%;
+  }
 
   & div > ul {
     padding: 0 22px;
@@ -43,6 +49,10 @@ const DetailWrapper = styled.div`
     font-size: 1rem;
     color: #9f9f9f;
     line-height: 1.25;
+  }
+
+  & li:not(:last-of-type) {
+    margin-bottom: 10px;
   }
 `;
 

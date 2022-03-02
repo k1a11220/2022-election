@@ -14,7 +14,7 @@ const CandidateCard = ({ party, candidate, background, link }) => {
           <h3>{candidate}</h3>
         </div>
         <ProfileContainer link={link}>
-          <Image src={link === "1" ? LeeImg : YoonImg} responsive />
+          <Image src={link === "1" ? LeeImg : YoonImg} responsive="true" />
         </ProfileContainer>
       </Container>
     </Link>
