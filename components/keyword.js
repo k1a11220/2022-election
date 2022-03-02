@@ -33,6 +33,7 @@ const DetailWrapper = styled.div`
   z-index: -1;
 
   & > div {
+    width: 50%;
     max-width: 50%;
   }
 
@@ -57,7 +58,7 @@ const DetailWrapper = styled.div`
   }
 
   & li:not(:last-of-type) {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
   }
 `;
 

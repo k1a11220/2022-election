@@ -27,8 +27,8 @@ export default function Home() {
         />
       </CardWrapper>
       <Title top={true}>
-        <h1>키워드로 보는 정책</h1>
-        <h3>2명의 후보가 만들어갈 미래입니다.</h3>
+        <h1>주요 정책 비교하기</h1>
+        <h3>두 명의 후보가 만들어갈 미래입니다.</h3>
       </Title>
       <KeywordList />
     </>
