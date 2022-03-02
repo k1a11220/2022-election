@@ -8,7 +8,7 @@ import YoonImg from "../media/yoon.png";
 const CandidateCard = ({ party, candidate, background, link }) => {
   return (
     <Link href={link}>
-      <Container background={background}>
+      <CardContainer background={background}>
         <div>
           <h4>{party}</h4>
           <h3>{candidate}</h3>
@@ -16,12 +16,12 @@ const CandidateCard = ({ party, candidate, background, link }) => {
         <ProfileContainer link={link}>
           <Image src={link === "1" ? LeeImg : YoonImg} responsive="true" />
         </ProfileContainer>
-      </Container>
+      </CardContainer>
     </Link>
   );
 };
 
-const Container = styled.div`
+const CardContainer = styled.div`
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
