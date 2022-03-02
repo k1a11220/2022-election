@@ -62,4 +62,8 @@ const CardWrapper = styled.div`
   display: flex;
   gap: 20px;
   margin-top: 20px;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+  }
 `;

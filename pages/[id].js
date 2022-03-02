@@ -88,11 +88,19 @@ const Header = styled.header`
   align-self: center;
   background-color: ${(props) =>
     props.id === "1" ? "#F7F8FA" : props.id === "2" ? "#FAF7F8" : ""};
+
+  @media (max-width: 680px) {
+    width: 100vw;
+  }
 `;
 
 const HeaderContent = styled.div`
   padding: 0 40px;
+  @media (max-width: 680px) {
+    padding: 0 20px;
+  }
   & h3 {
+    line-height: 1.25;
     color: #9f9f9f;
     font-size: 20px;
     font-weight: 400;
@@ -115,6 +123,8 @@ const ProfileContainer = styled.div`
 
 const TableWrapper = styled.section`
   padding-top: 40px;
+  display: flex;
+  flex-direction: column;
   & span:last-of-type {
     margin-bottom: 0;
   }
@@ -124,6 +134,12 @@ const Divider = styled.div`
   width: 100%;
   margin-top: 40px;
   border-bottom: 4px solid #f2f3f5;
+
+  @media (max-width: 680px) {
+    width: 100vw;
+    align-self: center;
+    border-bottom: 10px solid #f2f3f5;
+  }
 `;
 
 export default DetailPage;

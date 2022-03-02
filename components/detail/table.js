@@ -22,6 +22,7 @@ const Container = styled.span`
 
   & > p {
     font-weight: 500;
+    white-space: nowrap;
   }
 
   & div p {

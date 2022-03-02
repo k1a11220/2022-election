@@ -114,7 +114,10 @@ const KeywordList = () => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const NavContainer = styled.div`
   display: flex;
@@ -123,11 +126,20 @@ const NavContainer = styled.div`
   z-index: 1;
   margin-bottom: 26px;
 
+  @media (max-width: 680px) {
+    width: 100vw;
+    align-self: center;
+  }
+
   & div {
     width: 100%;
     background-color: #f07070;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 680px) {
+      width: 100vw;
+    }
   }
 
   & p {
@@ -146,6 +158,10 @@ const KeywordWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 66px;
+
+  @media (max-width: 500px) {
+    gap: 40px;
+  }
 `;
 
 export default KeywordList;

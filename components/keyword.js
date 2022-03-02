@@ -30,7 +30,6 @@ const Keyword = ({ label, listL, listY }) => {
 
 const DetailWrapper = styled.div`
   display: flex;
-  padding-left: 22px;
   z-index: -1;
 
   & > div {
@@ -39,6 +38,12 @@ const DetailWrapper = styled.div`
 
   & div > ul {
     padding: 0 22px;
+  }
+
+  & div:first-of-type > ul {
+    @media (max-width: 680px) {
+      padding-left: 40px;
+    }
   }
 
   & ul {
@@ -57,6 +62,11 @@ const DetailWrapper = styled.div`
 `;
 
 const Container = styled.div`
+  @media (max-width: 680px) {
+    width: 100vw;
+    align-self: center;
+  }
+
   & hr {
     margin: 0;
     margin-bottom: 26px;
