@@ -11,6 +11,7 @@ export default function Home() {
         <h1>2022년 20대 대선</h1>
         <h3>우리의 선택, 우리의 미래</h3>
       </Header>
+      {/*에러 발생*/}
       <ImportantCard />
       <CardWrapper>
         <CandidateCard
