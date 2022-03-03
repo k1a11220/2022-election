@@ -18,6 +18,7 @@ const CardContainer = styled.div`
   border-radius: 22px;
 
   & p {
+    line-height: 1.25;
     font-size: 0.875rem;
     text-align: center;
     padding: 1.375rem;
