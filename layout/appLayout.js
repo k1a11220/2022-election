@@ -9,6 +9,11 @@ const AppLayout = ({ children }) => {
       <GlobalStyle />
       <Head>
         <title>우리의 선택, 우리의 미래</title>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+        />
         <meta
           name="description"
           content="2022년 20대 대선 정보 모아보기"
