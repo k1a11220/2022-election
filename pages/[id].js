@@ -119,6 +119,10 @@ const HeaderContent = styled.div`
 const ProfileContainer = styled.div`
   width: ${(props) => (props.id === "1" ? "230px" : "270px")};
   align-self: flex-end;
+
+  @media (max-width: 680px) {
+    width: ${(props) => (props.id === "1" ? "230px" : "400px")};
+  }
 `;
 
 const TableWrapper = styled.section`
