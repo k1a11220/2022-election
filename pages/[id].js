@@ -133,12 +133,11 @@ const TableWrapper = styled.section`
 const Divider = styled.div`
   width: 100%;
   margin-top: 40px;
-  border-bottom: 4px solid #f2f3f5;
+  border-bottom: 10px solid #f2f3f5;
 
   @media (max-width: 680px) {
     width: 100vw;
     align-self: center;
-    border-bottom: 10px solid #f2f3f5;
   }
 `;
 
