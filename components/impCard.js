@@ -14,7 +14,7 @@ const ImpCard = () => {
 
 const CardContainer = styled.div`
   width: 100%;
-  background-color: #ffeded;
+  background: linear-gradient(45deg, #edf2ff, #ffeded);
   border-radius: 22px;
 
   & p {
